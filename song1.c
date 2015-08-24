@@ -14,12 +14,12 @@
 					A4_NOTE, A4_NOTE+.1, B4_NOTE, A4_NOTE, D5_NOTE, C5_S_NOTE,
 					A4_NOTE, A4_NOTE+.1, B4_NOTE, A4_NOTE, E5_NOTE, D5_NOTE,
 					A4_NOTE, A4_NOTE+.1, A4_NOTE, F5_S_NOTE, D5_NOTE, C5_S_NOTE, B4_NOTE,
-					G5_NOTE, G5_NOTE+.1, F5_S_NOTE, D5_NOTE, E5_NOTE, D5_NOTE,0,0,0,0
+					G5_NOTE, G5_NOTE+.1, F5_S_NOTE, D5_NOTE, E5_NOTE, D5_NOTE
 	    };
 unsigned short i =0;
 void noise()
 {
-		set_PWM(Happy_birthday_notes[i++%60]);
+		set_PWM(Happy_birthday_notes[i++%52]);
 }
 
 int main(void)
