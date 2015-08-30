@@ -1,0 +1,29 @@
+#include "notes.h"
+
+
+double Happy_birthday_notes[] ={A4_NOTE, A4_NOTE+.1, B4_NOTE, B4_NOTE, A4_NOTE, D5_NOTE, C5_S_NOTE,
+	A4_NOTE, A4_NOTE+.1, B4_NOTE, B4_NOTE, A4_NOTE, E5_NOTE , D5_NOTE,
+	A4_NOTE, A4_NOTE+.1, A4_NOTE, F5_S_NOTE, D5_NOTE, C5_S_NOTE, B4_NOTE,
+	G5_NOTE, G5_NOTE, F5_S_NOTE, D5_NOTE, E5_NOTE, D5_NOTE,
+	A4_NOTE, A4_NOTE+.1, B4_NOTE, A4_NOTE, D5_NOTE, C5_S_NOTE,
+	A4_NOTE, A4_NOTE+.1, B4_NOTE, A4_NOTE, E5_NOTE, D5_NOTE,
+	A4_NOTE, A4_NOTE+.1, A4_NOTE, F5_S_NOTE, D5_NOTE, C5_S_NOTE, B4_NOTE,
+	G5_NOTE, G5_NOTE+.1, F5_S_NOTE, D5_NOTE, E5_NOTE, D5_NOTE
+};
+double Simpsons_theme_notes[] ={
+	C4_NOTE   , E4_NOTE      , F4_S_NOTE  , A4_NOTE      ,
+	G4_NOTE   , E4_NOTE      , C4_NOTE    , A3_NOTE      ,
+	F3_S_NOTE , F3_S_NOTE+.1 , F3_S_NOTE  , G3_NOTE      ,
+	F3_S_NOTE , F3_S_NOTE+.1 , F3_S_NOTE  , F3_S_NOTE+.1 ,
+	A3_S_NOTE , C4_NOTE      , C4_NOTE+.1 , C4_NOTE      ,
+	C4_NOTE+.1,
+	C4_NOTE   , E4_NOTE      , F4_S_NOTE  , A4_NOTE      ,
+	G4_NOTE   , E4_NOTE      , C4_NOTE    , A3_NOTE      ,
+	F3_S_NOTE , F3_S_NOTE+.1 , F3_S_NOTE  , G3_NOTE      ,
+	F3_S_NOTE , F3_S_NOTE+.1 , F3_S_NOTE  , F3_S_NOTE+.1 ,
+	A3_S_NOTE , C4_NOTE      , C4_NOTE+.1 , C4_NOTE      ,
+	C4_NOTE+.1
+	
+	
+	
+};
