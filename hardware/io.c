@@ -10,7 +10,7 @@
 /*-------------------------------------------------------------------------*/
 
 #define DATA_BUS PORTC		// port connected to pins 7-14 of LCD display
-#define CONTROL_BUS PORTD	// port connected to pins 4 and 6 of LCD disp.
+#define CONTROL_BUS PORTA	// port connected to pins 4 and 6 of LCD disp.
 #define RS 6			// pin number of uC connected to pin 4 of LCD disp.
 #define E 7			// pin number of uC connected to pin 6 of LCD disp.
 
@@ -18,6 +18,45 @@
 
 void LCD_ClearScreen(void) {
    LCD_WriteCommand(0x01);
+}
+
+unsigned char left_arrow[8] = {
+	0b00001,	0b00011,	0b00111,	0b01111,
+	0b00111,	0b00011,	0b00001,	0b00000
+	};
+unsigned char right_arrow[8] = {
+	0b10000,	0b11000,	0b11100,	0b11110,
+	0b11100,	0b11000,	0b10000,	0b00000
+};
+unsigned char down_arrow[8] = {
+	0b11111,	0b11111,	0b01110,	0b00100,
+	0b00000,	0b00000,	0b00000,	0b00000
+};
+unsigned char up_arrow[8] = {
+	0b00000,	0b00000,	0b00000,	0b00000,
+	0b00100,	0b01110,	0b11111,	0b11111
+};
+unsigned char bar_horizontal[8] = {
+	0b00000,	0b00000,	0b11111,	0b11111,
+	0b11111,	0b00000,	0b00000,	0b00000
+};
+unsigned char bar_vertical[8] = {
+	0b01110,	0b01110,	0b01110,	0b01110,
+	0b01110,	0b01110,	0b01110,	0b01110
+};
+void LCDBuildChar(unsigned char loc, unsigned char *p)
+{
+	unsigned char i;
+	
+	if(loc<8)
+	{
+		LCD_WriteCommand(0x40+(loc*8));
+		for(i=0;i<8;i++)
+		{
+			LCD_WriteData(p[i]);
+		}
+	}
+	LCD_WriteCommand(0x80);
 }
 
 void LCD_init(void) {
@@ -28,8 +67,15 @@ void LCD_init(void) {
 	LCD_WriteCommand(0x06);
 	LCD_WriteCommand(0x0f);
 	LCD_WriteCommand(0x01);
-	delay_ms(10);						 
+	delay_ms(10);					
+	LCDBuildChar(0,left_arrow);
+	LCDBuildChar(1,right_arrow);
+	LCDBuildChar(2,down_arrow);
+	LCDBuildChar(3,up_arrow);
+	LCDBuildChar(4,bar_vertical);
+	LCDBuildChar(5,bar_horizontal);  
 }
+
 
 void LCD_WriteCommand (unsigned char Command) {
    CLR_BIT(CONTROL_BUS,RS);
